@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles/rutinas.css">
+    <script src="../static/scripts/rutinas.js"></script>
+    <title>Rutinas</title>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="main-content">
+        <h1 id="rutinas-title" class="rutinas-title">Rutinas</h1>
+
+        <button type="button" onclick="btnAddRutina()"
+        id="rutinas-btn-añadir-rutina" class="rutinas-btn-añadir-rutina">Nueva rutina</button>
+
+        <div id="rutinas-form-nueva-rutina" class="rutinas-form-nueva-rutina">
+            <input type="text" placeholder="Nombre"
+            id="rutinas-form-nueva-rutina-input-nombre" class="rutinas-form-nueva-rutina-input"/>
+            <button type="button" onclick="btnNuevaRutinaSubmit()"
+            id="rutinas-form-nueva-rutina-btn-submit" class="rutinas-form-nueva-rutina-btn">AÑADIR</button>
+            <button type="button" onclick="btnNuevaRutinaCancel()"
+            id="rutinas-form-nueva-rutina-btn-cancel" class="rutinas-form-nueva-rutina-btn">CANCELAR</button>
+        </div>
+    
+        <div id="rutinas-container-rutinas" class="rutinas-container-rutinas">
+            <h2 id="rutinas-container-rutinas-title" class="rutinas-container-rutinas-title">Tus rutinas</h2>
+            <ul id="rutinas-container-rutinas-lista" class="rutinas-container-rutinas-lista">
+                <!-- lista de rutinas creadas por el usuario -->
+            </ul>
+        </div>
+
+        <div id="rutinas-menu-ejercicios" class="rutinas-menu-ejercicios">
+            <ul id="rutinas-menu-ejercicios-lista" class="rutinas-menu-ejercicios-lista">
+                <!-- Aquí se cargan los ejercicios creados -->
+            </ul>
+        </div>
+
+    </div>
+    
+</body>
+</html>
