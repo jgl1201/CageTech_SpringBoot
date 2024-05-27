@@ -1,5 +1,7 @@
 package com.cagetech.cagetech.models;
 
+import java.util.Optional;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +23,7 @@ public class ArteMarcial {
 
     @ManyToOne
     @JoinColumn(name = "user_email")
-    private User user;
+    private Optional<User> user;
 
     
     public Long getId() {
@@ -78,11 +80,11 @@ public class ArteMarcial {
     }
 
 
-    public User getUser() {
+    public Optional<User> getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Optional<User> user) {
         this.user = user;
     }
 }

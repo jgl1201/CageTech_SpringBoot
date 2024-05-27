@@ -151,7 +151,7 @@ function openExerciseMenu(nombreRutina) {
     };
     document.addEventListener('click', clickOutsideListener);
 
-    fetch('../ejercicios.json')
+    fetch('../static/json/ejercicios.json')
     .then(response => response.json())
     .then(data => {
         const exerciseList = document.getElementById('rutinas-menu-ejercicios-lista');
