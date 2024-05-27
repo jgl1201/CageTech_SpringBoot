@@ -184,6 +184,7 @@ html, body {
 }
 
 .rutina-detalle-container-row-img {
+    content: url("../img/Trash.png");
     width: 20px;
     height: 20px;
     margin-bottom: 3px;
@@ -192,6 +193,7 @@ html, body {
 .rutina-detalle-container-row-img:hover {
     cursor: pointer;
 }
+
 
 .rutina-detalle-container-row-btn-agregar {
     background-color: aqua;
