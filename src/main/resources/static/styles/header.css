@@ -43,16 +43,32 @@ html, body {
     height: 3em;
 }
 
+#header-container-icon-rutinas:hover {
+    border-bottom: 2px solid var(--elements-color-p-hover)
+}
+
 #header-container-icon-rutinas:hover img {
     content: url('../img/rutina-p-hover.svg');
+}
+
+#header-container-icon-estadisticas:hover {
+    border-bottom: 2px solid var(--elements-color-p-hover)
 }
 
 #header-container-icon-estadisticas:hover img {
     content: url('../img/estats-p-hover.svg');
 }
 
+#header-container-icon-perfil:hover {
+    border-bottom: 2px solid var(--elements-color-p-hover)
+}
+
 #header-container-icon-perfil:hover img {
     content: url('../img/perfil-p-hover.svg');
+}
+
+#header-container-icon-ajustes:hover {
+    border-bottom: 2px solid var(--elements-color-p-hover)
 }
 
 #header-container-icon-ajustes:hover img {

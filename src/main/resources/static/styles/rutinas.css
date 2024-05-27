@@ -17,9 +17,8 @@ html, body {
 }
 
 #header-container-icon-rutinas {
-    border-bottom: 2px solid var(--elements-color-primary);
+    border-bottom: 2px solid var(--elements-color-p-selected);
 }
-
 
 #header-container-icon-img-rutinas {
     content: url("../img/rutina-p-selected.svg");
