@@ -94,7 +94,8 @@ function crearContenedorDetallesRutina(nombreRutina, rutinaId) {
 
     detallesRutina.appendChild(container2);
 
-    document.body.appendChild(detallesRutina);
+    var mainContent = document.getElementById("main-content");
+    mainContent.appendChild(detallesRutina);
 }
 
 function mostrarDetallesRutina(nombreRutina, rutinaId) {
@@ -150,7 +151,7 @@ function openExerciseMenu(nombreRutina) {
     };
     document.addEventListener('click', clickOutsideListener);
 
-    fetch('../api/ejercicios.json')
+    fetch('../ejercicios.json')
     .then(response => response.json())
     .then(data => {
         const exerciseList = document.getElementById('rutinas-menu-ejercicios-lista');
