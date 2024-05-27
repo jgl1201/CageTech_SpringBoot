@@ -249,6 +249,7 @@ html, body {
 }
 
 .rutina-detalle-container-row-row-img {
+    content: url("../img/Trash.png");
     width: 20px;
     height: 20px;
     margin-left: 10px;
