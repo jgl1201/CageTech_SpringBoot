@@ -1,0 +1,22 @@
+:root {
+    --body-color-primary: #d9d9d9;
+    --body-color-secondary: #404040;
+    --body-color-terciary: #606060;
+
+    --header-color-primary: #cccccc;
+    --header-color-secondary: #252525;
+
+    --footer-primary-color: #cccccc;
+    --footer-secondary-color: #252525;
+
+    --elements-color-primary: #660000;
+    --elements-color-p-hover: #aa0000;
+    --elements-color-p-selected: #ff0000;
+    --elements-color-secondary: #006600;
+    --elements-color-s-hover: #00aa00;
+    --elements-color-s-selected: #00ff00;
+    --link-color-primary: #0077cc;
+    --link-color-hover: #0099ff;
+    --form-input-focus-color: #007bff;
+    --form-input-hover-color: #666;
+}
