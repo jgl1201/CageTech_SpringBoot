@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    
+    <div id="register-form-container" class="register-form-container">
+
+        <h1 id="register-form-title" class="register-form-title">Registarse</h1>
+
+        <img src="../img/User.svg" alt="user" id="register-form-img" class="register-form-img">
+
+        <form method="POST" id="register-form" class="register-form">
+            <div id="register-form-group-email" class="register-form-group">
+                <input type="email" 
+                id="input-register-email" class="input-register-email"
+                name="email" placeholder="EMAIL" required>
+            </div>
+
+            <div id="register-form-group-nombre" class="register-form-group">
+                <input type="text"
+                id="input-register-nombre" class="input-register-nombre"
+                name="nombre" placeholder="NOMBRE" required>
+            </div>
+
+            <div id="register-form-group-apellido" class="register-form-group">
+                <input type="text"
+                id="input-register-apellido" class="input-register-apellido"
+                name="apellidos" placeholder="APELLIDOS" required>
+            </div>
+
+            <div id="register-form-group-password" class="register-form-group">
+                <input type="password"
+                id="input-register-password" class="input-register-password"
+                name="password" placeholder="CONTRASEÑA" required>
+            </div>
+
+            <div id="register-form-group-password-confirm" class="register-form-group">
+                <input type="password"
+                id="input-register-password-confirm" class="input-register-password-confirm"
+                name="passwordConfirm" placeholder="CONFIRMAR CONTRASEÑA" required>
+            </div>
+
+            <div id="register-form-group-link" class="register-form-group">
+                <p><b>¿Ya tienes cuenta? <a href="./login.html">Iniciar Sesión</a></b></p>
+            </div>
+
+            <button type="submit" id="btn-register-submit" class="btn-register-submit">REGISTRARSE</button>
+        </form>
+
+        <?php
+            include '../php/registration.php';
+        ?>
+
+    </div>
+
+</body>
+</html>
