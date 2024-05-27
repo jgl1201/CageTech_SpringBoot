@@ -14,7 +14,7 @@ html, body {
     width: 100%;
     border: none;
     background-color: var(--header-color-primary);
-    padding: 0.25em 1.25em;
+    padding: 0.0em 1.25em 0em 1.25em;
 }
 
 .header-container-logo {
