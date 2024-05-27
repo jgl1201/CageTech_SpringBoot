@@ -1,6 +1,6 @@
 const rutinaDetalles = {};
 
-fetch("../pages/header.html")
+fetch("../templates/header.html")
     .then(response => response.text())
     .then(html => {
         document.getElementById("header").innerHTML = html;
