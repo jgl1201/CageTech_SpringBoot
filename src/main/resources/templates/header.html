@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" th:href="@{/img/logo.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/styles/header.css}">
+    <title>CageTech</title>
+</head>
+<body>
+    
+    <div class="header-container" id="header-container">
+        <div class="header-container-logo" id="header-container-logo">
+            <img th:src="@{/img/logo.png}" alt="CageTech" title="CageTech">
+        </div>
+
+        <div class="header-container-icons" id="header-container-icons">
+
+            <div class="header-container-icon" id="header-container-icon-rutinas">
+                <a th:href="@{/pages/rutinas}" class="header-container-icon-link" id="header-container-icon-link-rutinas">
+                    <img th:src="@{/img/rutina-primary.svg}" alt="Rutinas" title="Rutinas" class="header-container-icon-img" id="header-container-icon-img-rutinas">
+                </a>
+            </div>
+
+            <div class="header-container-icon" id="header-container-icon-estadisticas">
+                <a th:href="@{/pages/estadisticas}" class="header-container-icon-link" id="header-container-icon-link-estadisticas">
+                    <img th:src="@{/img/estats-primary.svg}" alt="Estadísticas" title="Estadísticas" class="header-container-icon-img" id="header-container-icon-img-estadisticas">
+                </a>
+            </div>
+
+            <div class="header-container-icon" id="header-container-icon-perfil">
+                <a th:href="@{/pages/perfil}" class="header-container-icon-link" id="header-container-icon-link-perfil">
+                    <img th:src="@{/img/perfil-primary.svg}" alt="Perfil" title="Perfil" class="header-container-icon-img" id="header-container-icon-img-perfil">
+                </a>
+            </div>
+
+            <div class="header-container-icon" id="header-container-icon-ajustes">
+                <a th:href="@{/pages/ajustes}" class="header-container-icon-link" id="header-container-icon-link-ajustes">
+                    <img th:src="@{/img/ajustes-primary.svg}" alt="Ajustes" title="Ajustes" class="header-container-icon-img" id="header-container-icon-img-ajustes">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

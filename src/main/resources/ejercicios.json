@@ -1,0 +1,72 @@
+{
+    "ejercicios": [
+        {
+            "Nombre": "Sentadillas",
+            "Tipo": "ejercicio",
+            "Series": 3,
+            "Repeticiones": 12,
+            "Peso": "20 kg"
+        },
+        {
+            "Nombre": "Flexiones de pecho",
+            "Tipo": "ejercicio",
+            "Series": 3,
+            "Repeticiones": 15,
+            "Peso": "80 kg"
+        },
+        {
+            "Nombre": "Levantamiento de pesas",
+            "Tipo": "ejercicio",
+            "Series": 5,
+            "Repeticiones": 8,
+            "Peso": "50 kg"
+        },
+        {
+            "Nombre": "Zancadas",
+            "Tipo": "ejercicio",
+            "Series": 3,
+            "Repeticiones": 10,
+            "Peso": "20 kg"
+        },
+        {
+            "Nombre": "Jiu-jitsu brasileño",
+            "Tipo": "arte marcial",
+            "Calentamiento": 10,
+            "Técnica": 30,
+            "Sparring": 3,
+            "Num_Sparring": 3
+        },
+        {
+            "Nombre": "MMA",
+            "Tipo": "arte marcial",
+            "Calentamiento": 10,
+            "Técnica": 30,
+            "Sparring": 3,
+            "Num_Sparring": 3
+        },
+        {
+            "Nombre": "Sambo",
+            "Tipo": "arte marcial",
+            "Calentamiento": 8,
+            "Técnica": 30,
+            "Sparring": 6,
+            "Num_Sparring": 2
+        },
+        {
+            "Nombre": "Boxeo",
+            "Tipo": "arte marcial",
+            "Calentamiento": 12,
+            "Técnica": 30,
+            "Sparring": 3,
+            "Num_Sparring": 3
+        },
+        {
+            "Nombre": "Judo",
+            "Tipo": "arte marcial",
+            "Calentamiento": 10,
+            "Técnica": 30,
+            "Sparring": 6,
+            "Num_Sparring": 2
+        }
+    ]
+}

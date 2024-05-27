@@ -1,0 +1,60 @@
+@import url('colors.css');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background-color: var(--header-color-primary);
+    padding: 0.25em 1.25em;
+}
+
+.header-container-logo {
+    flex: 0 0 auto;
+}
+
+.header-container-logo img {
+    width: 7.5em;
+    height: 7.5em;
+}
+
+.header-container-icons {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-container-icon {
+    padding: 1em;
+    cursor: pointer;
+}
+
+.header-container-icon img {
+    width: 3em;
+    height: 3em;
+}
+
+#header-container-icon-rutinas:hover img {
+    content: url('../img/rutina-p-hover.svg');
+}
+
+#header-container-icon-estadisticas:hover img {
+    content: url('../img/estats-p-hover.svg');
+}
+
+#header-container-icon-perfil:hover img {
+    content: url('../img/perfil-p-hover.svg');
+}
+
+#header-container-icon-ajustes:hover img {
+    content: url('../img/ajustes-p-hover.svg');
+}
