@@ -144,3 +144,8 @@ input[type="password"]:focus::placeholder {
     background-color: var(--elements-color-p-hover);
 }
 
+.error-msg {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}

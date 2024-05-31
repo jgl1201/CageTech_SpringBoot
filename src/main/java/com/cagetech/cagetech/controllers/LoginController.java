@@ -1,21 +1,18 @@
 package com.cagetech.cagetech.controllers;
 
-import java.sql.Connection;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cagetech.cagetech.utils.DBConnection;
+import com.cagetech.cagetech.utils.DBUtils;
 
 public class LoginController {
 
     @Autowired
-    DBConnection dbConnection;
-
-    @Autowired
-    Connection connection;
+    DBUtils dbUtils;
 
     String userMail;
 
@@ -25,11 +22,14 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String doLogin(@RequestParam String email, @RequestParam String password) {
-        dbConnection = new DBConnection("localhost",  306, "root", "");
-        connection = dbConnection.getConnection();
+    public String doLogin(@RequestParam String email, @RequestParam String password, Map<String, Object> model) {
+        boolean validLogin = dbUtils.login(email, password);
 
-        boolean validUser = 
+        if (validLogin) return "redirect:/rutinas"; 
+        else {
+            model.put("error", "Email o contraseña incorrectos");
+            return "login";
+        }
     }
     
 }
