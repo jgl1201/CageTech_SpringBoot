@@ -1,6 +1,8 @@
 package com.cagetech.cagetech.utils;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,7 +21,17 @@ public class DBUtils {
             String sql = "use cagetech";
             stmDB.execute(sql);
 
-            
+            // Seleccionar la contraseña del email introducido
+            String psSQL = "select password from users where email = ?;";
+            PreparedStatement ps = con.prepareStatement(psSQL);
+            ps.setString(1, email);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String storedPassword = rs.getString(0);
+                return storedPassword.equals(password);
+            }
 
         } catch (SQLException sqle) {
             sqle.printStackTrace();
@@ -27,7 +39,7 @@ public class DBUtils {
             return false;
         }
 
-        return true;
+        return false;
     }
     
 }
