@@ -12,6 +12,7 @@ public class DBUtils {
     public Connection con;
 
     public boolean login(String email, String password) {
+        // Conexion con mysql
         db = new DBConnection("localhost", 3306, "root", "");
         con = db.getConnector();
 
