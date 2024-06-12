@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/login.css">
-    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/styles/login.css}">
+    <link rel="icon" th:href="@{/img/logo.svg}" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 
         <h1 id="login-title" class="login-title">Iniciar Sesión</h1>
 
-        <img src="../static/img/User.svg" alt="user" id="login-form-img" class="login-form-img">
+        <img th:src="@{/img/User.svg}" alt="user" id="login-form-img" class="login-form-img">
 
         <form method="POST" id="login-form" class="login-form">
             <div id="login-form-group-email" class="login-form-group">
@@ -24,9 +24,9 @@
 
             <div id="login-form-group-password" class="login-form-group">
                 <input type="password" 
-                id="input-login-password" class="input-logi-password" 
-                name="password" placeholder="CONTRSEÑA" required>
-            </div id="login-form-group-link" class="login-form-group">
+                id="input-login-password" class="input-login-password" 
+                name="password" placeholder="CONTRASEÑA" required>
+            </div>
 
             <div id="login-form-group-link" class="login-form-group">
                 <p><b>¿Aún no tienes cuenta? <a href="/register">Crear cuenta</a></b></p>
