@@ -12,4 +12,14 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping("/login")
+    public String login2() {
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register() {
+        return "registration";
+    }
+
 }

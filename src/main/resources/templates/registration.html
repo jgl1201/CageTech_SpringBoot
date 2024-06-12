@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../static/styles/registration.css">
+    <link rel="icon" th:href="@{/img/logo.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/styles/registration.css}">
     <title>Registration</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 
         <h1 id="register-form-title" class="register-form-title">Registarse</h1>
 
-        <img src="../static/img/User.svg" alt="user" id="register-form-img" class="register-form-img">
+        <img th:src="@{/img/User.svg}" alt="user" id="register-form-img" class="register-form-img">
 
         <form method="POST" id="register-form" class="register-form">
             <div id="register-form-group-email" class="register-form-group">
@@ -41,7 +41,7 @@
             </div>
 
             <div id="register-form-group-link" class="register-form-group">
-                <p><b>¿Ya tienes cuenta? <a href="/login">Iniciar Sesión</a></b></p>
+                <p><b>¿Ya tienes cuenta? <a th:href="@{/login}">Iniciar Sesión</a></b></p>
             </div>
 
             <button type="submit" id="btn-register-submit" class="btn-register-submit">REGISTRARSE</button>
