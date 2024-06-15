@@ -6,7 +6,9 @@ create table if not exists Users (
 	email varchar(255) primary key,
     nombre varchar(255) not null,
     apellidos varchar(355) not null,
-    contrasena varchar(255) not null
+    contrasena varchar(255) not null,
+    peso float,
+    altura float
 );
 
 create table if not exists Ejercicios (
@@ -32,7 +34,7 @@ create table if not exists ArtesMarciales (
     foreign key (us_email) references Users(email)
 );
 
-insert into Users values
+insert into Users(email, nombre, apellidos, contrasena) values
 ('user01@example.com', 'User', '01', 'pass01'), 
 ('user02@example.com', 'User', '02', 'pass02');
 
