@@ -1,7 +1,9 @@
 package com.cagetech.cagetech.models;
 
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,9 @@ public class UserModel {
     private String contrasena;
     private Float peso;
     private Float altura;
+
+    @OneToMany(mappedBy = "userModel")
+    private List<RutinasModel> rutinas;
 
     public String getEmail() {
         return email;
@@ -40,17 +45,22 @@ public class UserModel {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    public float getPeso() {
+    public Float getPeso() {
         return peso;
     }
-    public void setPeso(float peso) {
+    public void setPeso(Float peso) {
         this.peso = peso;
     }
-    public float getAltura() {
+    public Float getAltura() {
         return altura;
     }
-    public void setAltura(float altura) {
+    public void setAltura(Float altura) {
         this.altura = altura;
     }
-
+    public List<RutinasModel> getRutinas() {
+        return rutinas;
+    }
+    public void setRutinas(List<RutinasModel> rutinas) {
+        this.rutinas = rutinas;
+    }
 }

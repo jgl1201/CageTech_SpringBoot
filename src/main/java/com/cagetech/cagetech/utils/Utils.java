@@ -60,5 +60,15 @@ public class Utils {
             return false;
         }
     }
+
+    public void cargarRutinasExistentes(String userEmail) {
+        Connection con = dbConnection.getConnector();
+
+        try {
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
     
 }

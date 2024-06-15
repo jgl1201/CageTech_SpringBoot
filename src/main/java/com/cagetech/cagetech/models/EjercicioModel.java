@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "ejercicios")
+@Table(name = "Ejercicios")
 public class EjercicioModel {
 
     @Id
@@ -21,14 +21,14 @@ public class EjercicioModel {
     private Float peso;
 
     @ManyToOne
-    @JoinColumn(name = "us_email")
-    private UserModel userModel;
+    @JoinColumn(name = "rutina_id")
+    private RutinasModel rutina;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -40,36 +40,36 @@ public class EjercicioModel {
         this.nombre = nombre;
     }
 
-    public int getSeries() {
+    public Integer getSeries() {
         return series;
     }
 
-    public void setSeries(int series) {
+    public void setSeries(Integer series) {
         this.series = series;
     }
 
-    public int getRepeticiones() {
+    public Integer getRepeticiones() {
         return repeticiones;
     }
 
-    public void setRepeticiones(int repeticiones) {
+    public void setRepeticiones(Integer repeticiones) {
         this.repeticiones = repeticiones;
     }
 
-    public float getPeso() {
+    public Float getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(Float peso) {
         this.peso = peso;
     }
 
-    public UserModel getUserModel() {
-        return userModel;
+    public RutinasModel getRutina() {
+        return rutina;
     }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
+    public void setRutina(RutinasModel rutina) {
+        this.rutina = rutina;
     }
 
 }

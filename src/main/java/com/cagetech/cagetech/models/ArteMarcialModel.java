@@ -1,7 +1,6 @@
 package com.cagetech.cagetech.models;
 
 import java.time.LocalTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Artesmarciales")
+@Table(name = "ArtesMarciales")
 public class ArteMarcialModel {
 
     @Id
@@ -21,17 +20,17 @@ public class ArteMarcialModel {
     private LocalTime calentamiento;
     private LocalTime tecnica;
     private LocalTime sparring;
-    private Integer num_sparring;
+    private Integer numSparring;
 
     @ManyToOne
-    @JoinColumn(name = "us_email")
-    private UserModel userModel;
+    @JoinColumn(name = "rutina_id")
+    private RutinasModel rutina;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -67,20 +66,20 @@ public class ArteMarcialModel {
         this.sparring = sparring;
     }
 
-    public int getNum_sparring() {
-        return num_sparring;
+    public Integer getNumSparring() {
+        return numSparring;
     }
 
-    public void setNum_sparring(int num_sparring) {
-        this.num_sparring = num_sparring;
+    public void setNumSparring(Integer numSparring) {
+        this.numSparring = numSparring;
     }
 
-    public UserModel getUserModel() {
-        return userModel;
+    public RutinasModel getRutina() {
+        return rutina;
     }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
+    public void setRutina(RutinasModel rutina) {
+        this.rutina = rutina;
     }
 
 }
