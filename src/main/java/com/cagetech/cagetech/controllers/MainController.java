@@ -32,9 +32,9 @@ public class MainController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/rutinas")
     public ModelAndView login(@RequestParam("email") String email, @RequestParam("password") String password) {
-        Connection con = dbConnection.connect();
+        Connection con = dbConnection.getConnector();
         ModelAndView modelAndView = new ModelAndView();
 
         try {

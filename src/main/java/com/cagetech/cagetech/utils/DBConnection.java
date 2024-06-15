@@ -3,37 +3,30 @@ package com.cagetech.cagetech.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-import jakarta.annotation.PostConstruct;
-
+@Component
 public class DBConnection {
 
     private Connection connector;
 
-    @Value("${spring.datasource.url}")
-    private String url;
-
-    @Value("${spring.datasource.username}")
-    private String user;
-
-    @Value("${spring.datasource.password}")
-    private String password;
-
-    @PostConstruct
-    public void init() {
-        this.connector = connect();
+    public DBConnection(
+            @Value("${spring.datasource.url}") String url,
+            @Value("${spring.datasource.username}") String user,
+            @Value("${spring.datasource.password}") String password) {
+        this.connector = connect(url, user, password);
     }
 
-    public Connection connect() {
+    private Connection connect(String url, String user, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, user, password);
-            System.out.println("Conecion establecida");
+            System.out.println("Conexión establecida");
             return con;
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+            System.out.println("Error al conectar");
             return null;
         }
     }
