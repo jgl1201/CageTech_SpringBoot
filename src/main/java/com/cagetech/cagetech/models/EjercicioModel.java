@@ -14,11 +14,11 @@ public class EjercicioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nombre;
-    private int series;
-    private int repeticiones;
-    private float peso;
+    private Integer series;
+    private Integer repeticiones;
+    private Float peso;
 
     @ManyToOne
     @JoinColumn(name = "us_email")
