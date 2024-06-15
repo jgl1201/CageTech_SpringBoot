@@ -13,8 +13,8 @@ public class UserModel {
     private String nombre;
     private String apellidos;
     private String contrasena;
-    private float peso;
-    private float altura;
+    private Float peso;
+    private Float altura;
 
     public String getEmail() {
         return email;
