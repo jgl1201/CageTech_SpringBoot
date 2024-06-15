@@ -16,12 +16,12 @@ public class ArteMarcialModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nombre;
     private LocalTime calentamiento;
     private LocalTime tecnica;
     private LocalTime sparring;
-    private int num_sparring;
+    private Integer num_sparring;
 
     @ManyToOne
     @JoinColumn(name = "us_email")

@@ -1,5 +1,11 @@
 package com.cagetech.cagetech.repositories;
 
-public class ArteMarcialRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.cagetech.cagetech.models.ArteMarcialModel;
+
+@Repository
+public interface ArteMarcialRepository extends CrudRepository<ArteMarcialModel, Integer> {
     
 }
