@@ -1,12 +1,5 @@
 const rutinaDetalles = {};
 
-fetch("../templates/header.html")
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById("header").innerHTML = html;
-    })
-    .catch(error => console.error(error)) ;
-
 function btnAddRutina() {
     document.getElementById("rutinas-form-nueva-rutina").style.display = "block";
 }

@@ -15,7 +15,7 @@
 
         <img th:src="@{/img/User.svg}" alt="user" id="register-form-img" class="register-form-img">
 
-        <form method="POST" id="register-form" class="register-form">
+        <form action="/rutinas/register" method="POST" id="register-form" class="register-form">
             <div id="register-form-group-email" class="register-form-group">
                 <input type="email" 
                 id="input-register-email" class="input-register-email"
@@ -41,7 +41,7 @@
             </div>
 
             <div id="register-form-group-link" class="register-form-group">
-                <p><b>¿Ya tienes cuenta? <a th:href="@{/login}">Iniciar Sesión</a></b></p>
+                <p><b>¿Ya tienes cuenta? <a th:href="@{/}">Iniciar Sesión</a></b></p>
             </div>
 
             <button type="submit" id="btn-register-submit" class="btn-register-submit">REGISTRARSE</button>

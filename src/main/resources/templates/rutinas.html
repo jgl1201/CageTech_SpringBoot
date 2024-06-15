@@ -5,12 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" th:href="@{/img/logo.svg}" type="image/x-icon">
     <link rel="stylesheet" th:href="@{/styles/rutinas.css}">
+    <link rel="stylesheet" th:href="@{/styles/header.css}">
     <script th:src="@{/scripts/rutinas.js}"></script>
     <title>Rutinas</title>
+
 </head>
 <body>
 
-    <div id="header"></div>
+    <div id="header">
+        <div class="header-container" id="header-container">
+            <div class="header-container-logo" id="header-container-logo">
+                <img th:src="@{/img/logo.png}" alt="CageTech" title="CageTech">
+            </div>
+    
+            <div class="header-container-icons" id="header-container-icons">
+    
+                <div class="header-container-icon" id="header-container-icon-rutinas">
+                    <a th:href="@{/rutinas}" class="header-container-icon-link" id="header-container-icon-link-rutinas">
+                        <img th:src="@{/img/rutina-primary.svg}" alt="Rutinas" title="Rutinas" class="header-container-icon-img" id="header-container-icon-img-rutinas">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-estadisticas">
+                    <a th:href="@{/estadisticas}" class="header-container-icon-link" id="header-container-icon-link-estadisticas">
+                        <img th:src="@{/img/estats-primary.svg}" alt="Estadísticas" title="Estadísticas" class="header-container-icon-img" id="header-container-icon-img-estadisticas">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-perfil">
+                    <a th:href="@{/perfil}" class="header-container-icon-link" id="header-container-icon-link-perfil">
+                        <img th:src="@{/img/perfil-primary.svg}" alt="Perfil" title="Perfil" class="header-container-icon-img" id="header-container-icon-img-perfil">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-ajustes">
+                    <a th:href="@{/ajustes}" class="header-container-icon-link" id="header-container-icon-link-ajustes">
+                        <img th:src="@{/img/ajustes-primary.svg}" alt="Ajustes" title="Ajustes" class="header-container-icon-img" id="header-container-icon-img-ajustes">
+                    </a>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
 
     <div class="main-content" id="main-content">
         <h1 id="rutinas-title" class="rutinas-title">Rutinas</h1>
