@@ -34,6 +34,10 @@ public class MainController {
     // Rutinas 
     @RequestMapping("/rutinas")
     public String rutinas(Model model) {
+        System.out.println(userMail);
+        System.out.println(utils.rutinasPorEmail(userMail).size());
+
+        if (userMail != null) model.addAttribute("rutinasUsuario", utils.rutinasPorEmail(userMail));
 
         return "rutinas";
     }

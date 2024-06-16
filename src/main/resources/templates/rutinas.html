@@ -66,8 +66,8 @@
     
         <div id="rutinas-container-rutinas" class="rutinas-container-rutinas">
             <h2 id="rutinas-container-rutinas-title" class="rutinas-container-rutinas-title">Tus rutinas</h2>
-            <ul id="rutinas-container-rutinas-lista" class="rutinas-container-rutinas-lista">
-                <!-- lista de rutinas creadas por el usuario -->
+            <ul id="rutinas-container-rutinas-lista" class="rutinas-container-rutinas-lista" th:each="rutina : ${rutinasUsuario}">
+                <li th:text="${rutina.nombre}"></li>
             </ul>
         </div>
 

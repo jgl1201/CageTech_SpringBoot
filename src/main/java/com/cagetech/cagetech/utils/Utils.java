@@ -4,10 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.cagetech.cagetech.models.RutinasModel;
+import com.cagetech.cagetech.repositories.RutinasRepository;
 import com.cagetech.cagetech.repositories.UserRepository;
 
 @Component
@@ -17,6 +21,8 @@ public class Utils {
     private DBConnection dbConnection;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private RutinasRepository rutinasRepository;
 
     public boolean validateLogin(String email, String password) {
         Connection con = dbConnection.getConnector();
@@ -59,6 +65,17 @@ public class Utils {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public List<RutinasModel> rutinasPorEmail (String email) {
+        List<RutinasModel> rutinasEmail = new ArrayList<>();
+
+        List<RutinasModel> rutinas = (List<RutinasModel>) rutinasRepository.findAll();
+
+        for (RutinasModel rutina : rutinas) 
+            if (rutina.getUserModel().getEmail().equalsIgnoreCase(email)) rutinasEmail.add(rutina);
+
+        return rutinasEmail;
     }
 
     
