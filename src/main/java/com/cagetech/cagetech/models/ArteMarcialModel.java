@@ -1,13 +1,12 @@
 package com.cagetech.cagetech.models;
 
-import java.time.LocalTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
+import java.sql.Time;
 
 @Entity
 @Table(name = "ArtesMarciales")
@@ -17,14 +16,12 @@ public class ArteMarcialModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    private LocalTime calentamiento;
-    private LocalTime tecnica;
-    private LocalTime sparring;
+    private Time calentamiento;
+    private Time tecnica;
+    private Time sparring;
     private Integer numSparring;
 
-    @ManyToOne
-    @JoinColumn(name = "rutina_id")
-    private RutinasModel rutina;
+    // Getters y Setters
 
     public Integer getId() {
         return id;
@@ -42,27 +39,27 @@ public class ArteMarcialModel {
         this.nombre = nombre;
     }
 
-    public LocalTime getCalentamiento() {
+    public Time getCalentamiento() {
         return calentamiento;
     }
 
-    public void setCalentamiento(LocalTime calentamiento) {
+    public void setCalentamiento(Time calentamiento) {
         this.calentamiento = calentamiento;
     }
 
-    public LocalTime getTecnica() {
+    public Time getTecnica() {
         return tecnica;
     }
 
-    public void setTecnica(LocalTime tecnica) {
+    public void setTecnica(Time tecnica) {
         this.tecnica = tecnica;
     }
 
-    public LocalTime getSparring() {
+    public Time getSparring() {
         return sparring;
     }
 
-    public void setSparring(LocalTime sparring) {
+    public void setSparring(Time sparring) {
         this.sparring = sparring;
     }
 
@@ -73,13 +70,4 @@ public class ArteMarcialModel {
     public void setNumSparring(Integer numSparring) {
         this.numSparring = numSparring;
     }
-
-    public RutinasModel getRutina() {
-        return rutina;
-    }
-
-    public void setRutina(RutinasModel rutina) {
-        this.rutina = rutina;
-    }
-
 }

@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,10 +17,6 @@ public class EjercicioModel {
     private Integer series;
     private Integer repeticiones;
     private Float peso;
-
-    @ManyToOne
-    @JoinColumn(name = "rutina_id")
-    private RutinasModel rutina;
 
     public Integer getId() {
         return id;
@@ -63,13 +57,4 @@ public class EjercicioModel {
     public void setPeso(Float peso) {
         this.peso = peso;
     }
-
-    public RutinasModel getRutina() {
-        return rutina;
-    }
-
-    public void setRutina(RutinasModel rutina) {
-        this.rutina = rutina;
-    }
-
 }
