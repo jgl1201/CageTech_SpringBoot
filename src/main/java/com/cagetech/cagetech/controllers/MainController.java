@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cagetech.cagetech.models.RutinasModel;
 import com.cagetech.cagetech.utils.Utils;
 
 
@@ -36,6 +37,8 @@ public class MainController {
     public String rutinas(Model model) {
         System.out.println(userMail);
         System.out.println(utils.rutinasPorEmail(userMail).size());
+
+        for (RutinasModel rutina : utils.rutinasPorEmail(userMail)) System.out.println(rutina.getId());
 
         if (userMail != null) model.addAttribute("rutinasUsuario", utils.rutinasPorEmail(userMail));
 

@@ -78,6 +78,29 @@
         </div>
 
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rutinasList = document.getElementById("rutinas-container-rutinas-lista");
+
+            // Manejo del click para cada rutina
+            rutinasList.addEventListener("click", function() {
+                const li = event.target.closest("li");
+
+                if (li) {
+                    const nombreRutina = li.textContent.trim();
+
+                    // Ocultar todos los detalles abiertos
+                    document.querySelectorAll('.rutina-detalle-container').forEach(detalle => {
+                        detalle.style.display = 'none';
+                    });
+
+                    // Mostrar los detalles de la rutina seleccionada
+                    mostrarDetallesRutina(nombreRutina);
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
