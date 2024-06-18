@@ -6,13 +6,11 @@
     <link rel="icon" th:href="@{/img/logo.svg}" type="image/x-icon">
     <link rel="stylesheet" href="@{/styles/colors.css}">
     <link rel="stylesheet" th:href="@{/styles/header.css}">
-    <link rel="stylesheet" th:href="@{/styles/rutinas.css}">
-    <script th:src="@{/scripts/rutinas.js}"></script>
-    <title>Rutinas</title>
-
+    <link rel="stylesheet" th:href="@{/styles/ajustes.css}">
+    <title>Settings</title>
 </head>
 <body>
-
+    
     <div id="header">
         <div class="header-container" id="header-container">
             <div class="header-container-logo" id="header-container-logo">
@@ -50,39 +48,49 @@
         </div>
     </div>
 
-    <div class="main-content" id="main-content">
-        <h1 id="rutinas-title" class="rutinas-title">Rutinas</h1>
+    <div class="main-content">
 
-        <button type="button" onclick="btnAddRutina()"
-        id="rutinas-btn-añadir-rutina" class="rutinas-btn-añadir-rutina">Nueva rutina</button>
+        <h1>Ajustes</h1>
 
-        <form action="/rutinas/nueva" method="POST" id="rutinas-form-nueva-rutina" class="rutinas-form-nueva-rutina">
-            <input type="text" placeholder="Nombre" name="nombre"
-            id="rutinas-form-nueva-rutina-input-nombre" class="rutinas-form-nueva-rutina-input"/>
-            <button type="submit"  id="rutinas-form-nueva-rutina-btn-submit" class="rutinas-form-nueva-rutina-btn">AÑADIR</button>
-            <button type="reset" id="rutinas-form-nueva-rutina-btn-cancel" class="rutinas-form-nueva-rutina-btn">CANCELAR</button>
-        </form>
-    
-        <div id="rutinas-container-rutinas" class="rutinas-container-rutinas">
-            <h2 id="rutinas-container-rutinas-title" class="rutinas-container-rutinas-title">Tus rutinas</h2>
-            <ul id="rutinas-container-rutinas-lista" class="rutinas-container-rutinas-lista" >
-                <li th:each="rutina : ${rutinasUsuario}">
-                    <a th:href="@{'/rutinas/' + ${rutina.id} }" th:text="${rutina.nombre}" class="rutinas-container-rutinas-lista-link"></a>
-                </li>
-            </ul>
+        <div>
+            <h3>Background</h3>
+            <input type="color" id="colorPickerBody" name="colorPickerBody">
+
+            <button onclick="changeColorBody()">Aplicar</button>
         </div>
 
-        <div id="rutinas-menu-ejercicios" class="rutinas-menu-ejercicios">
-            <ul id="rutinas-menu-ejercicios-lista" class="rutinas-menu-ejercicios-lista">
-                <!-- Aquí se cargan los ejercicios creados -->
-            </ul>
+        <div>
+            <h3>Cabecera</h3>
+            <input type="color" id="colorPickerHeader" name="colorPickerHeader">
+
+            <button onclick="changeColorHeader()">Aplicar</button>
         </div>
 
+        <div>
+            <h3>Contenedores</h3>
+            <input type="color" name="colorPickerContenedores" id="colorPickerContenedores">
+
+            <button onclick="changeColorContainers()">Aplicar</button>
+        </div>
+
+        <div>
+            <h3>Lista de Rutinas</h3>
+            <input type="color" name="colorPickerList" id="colorPickerList">
+
+            <button onclick="changeColorList()">Aplicar</button>
+        </div>
+
+        <div>
+            <h3>MMAs</h3>
+            <input type="color" name="colorPickerMMA" id="colorPickerMMA">
+
+            <button onclick="changeColorMMA()">Aplicar</button>
+        </div>
     </div>
-    
+
     <script>
-        window.onload =  function() {
-            // Apply saved colors from localStorage if they exist
+
+        window.onload = function() {
             const bodyColor = localStorage.getItem('--body-color-primary');
             const headerColor = localStorage.getItem('--header-color-primary');
             const containerColor = localStorage.getItem('--body-color-secondary');
@@ -95,6 +103,51 @@
             if (listColor) document.body.style.setProperty('--list-color-primary', listColor);
             if (MMAColor) document.body.style.setProperty('--container-mma', MMAColor);
         };
+
+        function changeColorBody() {
+            const colorPicker = document.getElementById("colorPickerBody");
+            const selection = colorPicker.value;
+
+            document.body.style.setProperty('--body-color-primary', selection);
+            document.html.style.setProperty('--body-color-primary', selection);
+            localStorage.setItem('--body-color-primary', selection);
+        }
+
+        function changeColorContainers() {
+            const colorPicker = document.getElementById("colorPickerContenedores");
+            const selection = colorPicker.value;
+
+            document.body.style.setProperty('--body-color-secondary', selection);
+            document.html.style.setProperty('--body-color-secondary', selection);
+            localStorage.setItem('--body-color-secondary', selection);
+        }
+
+        function changeColorHeader() {
+            const colorPicker = document.getElementById("colorPickerHeader");
+            const selection = colorPicker.value;
+
+            document.body.style.setProperty('--header-color-primary', selection);
+            document.html.style.setProperty('--header-color-primary', selection);
+            localStorage.setItem('--header-color-primary', selection);
+        }
+
+        function changeColorList() {
+            const colorPicker = document.getElementById("colorPickerList");
+            const selection = colorPicker.value;
+
+            document.body.style.setProperty('--list-color-primary', selection);
+            document.html.style.setProperty('--list-color-primary', selection);
+            localStorage.setItem('--list-color-primary', selection);
+        }
+
+        function changeColorMMA() {
+            const colorPicker = document.getElementById("colorPickerMMA");
+            const selection = colorPicker.value;
+
+            document.body.style.setProperty('--container-mma', selection);
+            document.html.style.setProperty('--container-mma', selection);
+            localStorage.setItem('--container-mma', selection);
+        }
     </script>
 
 </body>

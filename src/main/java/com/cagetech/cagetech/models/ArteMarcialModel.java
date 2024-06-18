@@ -19,7 +19,7 @@ public class ArteMarcialModel {
     private Time calentamiento;
     private Time tecnica;
     private Time sparring;
-    private Integer numSparring;
+    private Integer num_sparring;
 
     // Getters y Setters
 
@@ -63,11 +63,11 @@ public class ArteMarcialModel {
         this.sparring = sparring;
     }
 
-    public Integer getNumSparring() {
-        return numSparring;
+    public Integer getNum_sparring() {
+        return num_sparring;
     }
 
-    public void setNumSparring(Integer numSparring) {
-        this.numSparring = numSparring;
+    public void setNum_sparring(Integer num_sparring) {
+        this.num_sparring = num_sparring;
     }
 }

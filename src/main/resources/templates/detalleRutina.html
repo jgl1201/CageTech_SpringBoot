@@ -6,10 +6,8 @@
     <link rel="icon" th:href="@{/img/logo.svg}" type="image/x-icon">
     <link rel="stylesheet" href="@{/styles/colors.css}">
     <link rel="stylesheet" th:href="@{/styles/header.css}">
-    <link rel="stylesheet" th:href="@{/styles/rutinas.css}">
-    <script th:src="@{/scripts/rutinas.js}"></script>
+    <link rel="stylesheet" th:href="@{/styles/detalleRutina.css}">
     <title>Rutinas</title>
-
 </head>
 <body>
 
@@ -50,36 +48,55 @@
         </div>
     </div>
 
-    <div class="main-content" id="main-content">
-        <h1 id="rutinas-title" class="rutinas-title">Rutinas</h1>
+    <div class="main-content">
+        <h1 class="title">Rutina</h1>
 
-        <button type="button" onclick="btnAddRutina()"
-        id="rutinas-btn-añadir-rutina" class="rutinas-btn-añadir-rutina">Nueva rutina</button>
+        <div th:each="ejercicio : ${ejerciciosRutina}" class="ejercicios">
+            <ul>
+                <h2 th:text="${ejercicio.nombre}"></h2>
+                <div th:each="i : ${#numbers.sequence(1, ejercicio.series)}" class="series">
+                    <div>
+                        <label for="repeticiones">Repeticiones: </label>
+                        <input type="number" name="repeticiones" th:value="${ejercicio.repeticiones}" required>
+                    </div>
 
-        <form action="/rutinas/nueva" method="POST" id="rutinas-form-nueva-rutina" class="rutinas-form-nueva-rutina">
-            <input type="text" placeholder="Nombre" name="nombre"
-            id="rutinas-form-nueva-rutina-input-nombre" class="rutinas-form-nueva-rutina-input"/>
-            <button type="submit"  id="rutinas-form-nueva-rutina-btn-submit" class="rutinas-form-nueva-rutina-btn">AÑADIR</button>
-            <button type="reset" id="rutinas-form-nueva-rutina-btn-cancel" class="rutinas-form-nueva-rutina-btn">CANCELAR</button>
-        </form>
-    
-        <div id="rutinas-container-rutinas" class="rutinas-container-rutinas">
-            <h2 id="rutinas-container-rutinas-title" class="rutinas-container-rutinas-title">Tus rutinas</h2>
-            <ul id="rutinas-container-rutinas-lista" class="rutinas-container-rutinas-lista" >
-                <li th:each="rutina : ${rutinasUsuario}">
-                    <a th:href="@{'/rutinas/' + ${rutina.id} }" th:text="${rutina.nombre}" class="rutinas-container-rutinas-lista-link"></a>
-                </li>
+                    <div>
+                        <label for="peso">Peso(kg): </label>
+                        <input type="number" name="peso" th:value="${ejercicio.peso}" required>
+                    </div>
+                </div>
             </ul>
         </div>
 
-        <div id="rutinas-menu-ejercicios" class="rutinas-menu-ejercicios">
-            <ul id="rutinas-menu-ejercicios-lista" class="rutinas-menu-ejercicios-lista">
-                <!-- Aquí se cargan los ejercicios creados -->
-            </ul>
+        <div th:each="artemarcial : ${artesMarcialesRutina}" class="artesmarciales">
+            <ul>
+                <h2 th:text="${artemarcial.nombre}"></h2>
+                <div class="series">
+                    <div>
+                        <label for="calentamiento">Calentamiento: </label>
+                        <input type="time" name="calentamiento" th:value="${artemarcial.calentamiento}" required>
+                    </div>
+
+                    <div>
+                        <label for="tecnica">Tecnica: </label>
+                        <input type="time" name="tecnica" th:value="${artemarcial.tecnica}" required>
+                    </div>
+
+                    <div>
+                        <label for="sparring">Sparring: </label>
+                        <input type="time" name="sparring" th:value="${artemarcial.sparring}" required>
+                    </div>
+
+                    <div>
+                        <label for="num_sparring">Núm. Sparring: </label>
+                        <input type="number" name="num_sparring" th:value="${artemarcial.num_sparring}" required>
+                    </div>
+                </ul>
+            </div>
         </div>
 
     </div>
-    
+
     <script>
         window.onload =  function() {
             // Apply saved colors from localStorage if they exist
@@ -96,6 +113,6 @@
             if (MMAColor) document.body.style.setProperty('--container-mma', MMAColor);
         };
     </script>
-
+    
 </body>
 </html>
