@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import com.cagetech.cagetech.models.ArteMarcialModel;
 import com.cagetech.cagetech.models.EjercicioModel;
 import com.cagetech.cagetech.models.RutinasModel;
+import com.cagetech.cagetech.models.UserModel;
 import com.cagetech.cagetech.repositories.RutinasRepository;
 import com.cagetech.cagetech.repositories.UserRepository;
 
@@ -167,6 +168,46 @@ public class Utils {
         }
 
         return artesMarcialesRutina;
+    }
+
+    public UserModel datosPerfil (String email) {
+        Connection con = dbConnection.getConnector();
+
+        UserModel user = new UserModel();
+
+        try {
+            String query = "select peso, altura from users where email = ?;";
+
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setString(1, email);
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                user.setPeso(rs.getFloat("peso"));
+                user.setAltura(rs.getFloat("altura"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public void actualizarPesoAltura (String email, Float peso, Float altura) {
+        Connection con = dbConnection.getConnector();
+
+        try {
+            String query = "update users set peso = ?, altura = ? where email = ?;";
+
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setFloat(1, peso);
+            pst.setFloat(2, altura);
+            pst.setString(3, email);
+
+            pst.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

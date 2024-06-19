@@ -1,0 +1,80 @@
+@import url('colors.css');
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--body-color-primary);
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    width: 100%;
+}
+
+#header-container-icon-perfil {
+    border-bottom: 2px solid var(--elements-color-p-selected);
+}
+
+#header-container-icon-img-perfil {
+    content: url("../img/perfil-p-selected.svg");
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content form {
+    position: relative;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content form div {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.main-content form div input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.main-content form div input:focus {
+    border-color: var(--form-input-focus-color);
+    outline: none;
+}
+
+.main-content form button{ 
+    position: relative;
+    z-index: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: var(--elements-color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.main-content form button:hover {
+    background-color: var(--elements-color-p-hover);
+}

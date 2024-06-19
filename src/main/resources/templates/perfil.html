@@ -1,15 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" th:href="@{/img/logo.svg}" type="image/x-icon">
+    <link rel="stylesheet" href="@{/styles/colors.css}">
+    <link rel="stylesheet" th:href="@{/styles/header.css}">
+    <link rel="stylesheet" th:href="@{/styles/pefil.css}">
     <title>Perfil</title>
 </head>
 <body>
 
-    <div id="header" class="header"></div>
+    <div id="header">
+        <div class="header-container" id="header-container">
+            <div class="header-container-logo" id="header-container-logo">
+                <img th:src="@{/img/logo.png}" alt="CageTech" title="CageTech">
+            </div>
+    
+            <div class="header-container-icons" id="header-container-icons">
+    
+                <div class="header-container-icon" id="header-container-icon-rutinas">
+                    <a th:href="@{/rutinas}" class="header-container-icon-link" id="header-container-icon-link-rutinas">
+                        <img th:src="@{/img/rutina-primary.svg}" alt="Rutinas" title="Rutinas" class="header-container-icon-img" id="header-container-icon-img-rutinas">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-estadisticas">
+                    <a th:href="@{/estadisticas}" class="header-container-icon-link" id="header-container-icon-link-estadisticas">
+                        <img th:src="@{/img/estats-primary.svg}" alt="Estadísticas" title="Estadísticas" class="header-container-icon-img" id="header-container-icon-img-estadisticas">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-perfil">
+                    <a th:href="@{/perfil}" class="header-container-icon-link" id="header-container-icon-link-perfil">
+                        <img th:src="@{/img/perfil-primary.svg}" alt="Perfil" title="Perfil" class="header-container-icon-img" id="header-container-icon-img-perfil">
+                    </a>
+                </div>
+    
+                <div class="header-container-icon" id="header-container-icon-ajustes">
+                    <a th:href="@{/ajustes}" class="header-container-icon-link" id="header-container-icon-link-ajustes">
+                        <img th:src="@{/img/ajustes-primary.svg}" alt="Ajustes" title="Ajustes" class="header-container-icon-img" id="header-container-icon-img-ajustes">
+                    </a>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
 
-    <div class="main-content"></div>
+    <div class="main-content">
+
+        <h1>Tu perfil</h1>
+
+        <form action="/perfil/update" method="post">
+            <div>
+                <label for="altura">Altura: </label>
+                <input type="number" id="altura" name="altura" step="0.01" th:value="${user.altura}">
+            </div>
+
+            <div>
+                <label for="peso">Peso: </label>
+                <input type="number" id="peso" name="peso" step="0.01" th:value="${user.peso}">
+            </div>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <script>
+        window.onload =  function() {
+            // Apply saved colors from localStorage if they exist
+            const bodyColor = localStorage.getItem('--body-color-primary');
+            const headerColor = localStorage.getItem('--header-color-primary');
+            const containerColor = localStorage.getItem('--body-color-secondary');
+            const listColor = localStorage.getItem('--list-color-primary');
+            const MMAColor = localStorage.getItem('--container-mma');
+
+            if (bodyColor) document.body.style.setProperty('--body-color-primary', bodyColor);
+            if (headerColor) document.body.style.setProperty('--header-color-primary', headerColor);
+            if (containerColor) document.body.style.setProperty('--body-color-secondary', containerColor);
+            if (listColor) document.body.style.setProperty('--list-color-primary', listColor);
+            if (MMAColor) document.body.style.setProperty('--container-mma', MMAColor);
+        };
+    </script>
     
 </body>
 </html>

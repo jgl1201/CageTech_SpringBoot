@@ -88,4 +88,19 @@ public class MainController {
         return "ajustes";
     }
 
+    @RequestMapping("/perfil")
+    public String perfil(Model model) {
+        model.addAttribute("user", utils.datosPerfil(userMail));
+
+        return "perfil";
+    }
+
+    @PostMapping("/perfil/update")
+    public String updateDatosPerfil(@RequestParam("altura") Float altura, @RequestParam("peso") Float peso) {
+
+        utils.actualizarPesoAltura(userMail, peso, altura);
+        return "redirect:/perfil";
+
+    }
+
 }
